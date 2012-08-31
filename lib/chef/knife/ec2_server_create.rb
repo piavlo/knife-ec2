@@ -371,7 +371,7 @@ class Chef
       def create_server_def
         server_def = {
           :image_id => locate_config_value(:image),
-          :groups => config[:security_groups],
+          :groups => locate_config_value(:security_groups),
           :security_group_ids => config[:security_group_ids],
           :flavor_id => locate_config_value(:flavor),
           :key_name => Chef::Config[:knife][:aws_ssh_key_id],
